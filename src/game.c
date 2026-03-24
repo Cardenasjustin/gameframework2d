@@ -3,69 +3,249 @@
 
 #include "gf2d_graphics.h"
 #include "gf2d_sprite.h"
+#include "gf2d_draw.h"
+
+#include "camera.h"
+#include "entity.h"
+#include "monster.h"
+#include "tankmonster.h"
+#include "huntermonster.h"
+#include "spittermonster.h"
+#include "witchmonster.h"
+#include "player.h"
+#include "world.h"
+#include "projectile.h"
+#include "assaultrifle_pickup.h"
+#include "shotgun_pickup.h"
+#include "pistol_pickup.h"
+#include "deagle_pickup.h"
+#include "smg_pickup.h"
+#include "barrel.h"
 
 int main(int argc, char * argv[])
 {
-    /*variable declarations*/
     int done = 0;
     const Uint8 * keys;
-    Sprite *sprite;
+    World *world;
     
     int mx,my;
-    float mf = 0;
     Sprite *mouse;
-    GFC_Color mouseGFC_Color = gfc_color8(255,100,255,200);
+
+    Entity* player;
+    Entity* assaultRiflePickup;
+    Entity* shotgunPickup;
+    Entity* pistolPickup;
+    Entity* deaglePickup;
+    Entity* smgPickup;
+    Entity* barrel1;
+
+    Sprite* uiAssaultRifle;
+    Sprite* uiShotgun;
+    Sprite* uiPistol;
+    Sprite* uiDeagle;
+    Sprite* uiSmg;
+
+    int spawnCooldown = 0;
+    int spawnOffset = 200;
     
-    /*program initializtion*/
     init_logger("gf2d.log",0);
     slog("---==== BEGIN ====---");
     gf2d_graphics_initialize(
         "gf2d",
-        1200,
-        720,
-        1200,
-        720,
+        800,
+        608,
+        800,
+        608,
         gfc_vector4d(0,0,0,255),
         0);
     gf2d_graphics_set_frame_delay(16);
     gf2d_sprite_init(1024);
+    entity_system_initialize(1024);
     SDL_ShowCursor(SDL_DISABLE);
+    camera_set_size(gfc_vector2d(800,608));
     
     /*demo setup*/
-    sprite = gf2d_sprite_load_image("images/backgrounds/bg_flat.png");
-    mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
+    GFC_Vector2D mouseCenter = { 16.0f, 10.5f };
+    mouse = gf2d_sprite_load_all("images/reticle.png", 32, 21, 1, 0);
+    uiAssaultRifle = gf2d_sprite_load_all("images/AKUI.png", 600, 600, 1, 0);
+    uiShotgun = gf2d_sprite_load_all("images/shotgunUI.png", 600, 600, 1, 0);
+    uiPistol = gf2d_sprite_load_all("images/pistolUI.png", 600, 600, 1, 0);
+    uiDeagle = gf2d_sprite_load_all("images/DeagleUI.png", 600, 600, 1, 0);
+    uiSmg = gf2d_sprite_load_all("images/SMGUI.png", 600, 600, 1, 0);
     slog("press [escape] to quit");
+    player = player_new();
+
+    assaultRiflePickup = assaultrifle_pickup_new(player, gfc_vector2d(300, 200));
+    shotgunPickup = shotgun_pickup_new(player, gfc_vector2d(450, 200));
+    pistolPickup = pistol_pickup_new(player, gfc_vector2d(600, 200));
+    deaglePickup = deagle_pickup_new(player, gfc_vector2d(750, 200));
+    smgPickup = smg_pickup_new(player, gfc_vector2d(150, 200));
+    barrel1 = barrel_new(gfc_vector2d(500, 350));
+
+    world = world_load("maps/testworld.map");
+    world_setup_camera(world);
+    //monster_new(player, gfc_vector2d(400, 300));
+    //tankmonster_new(player, gfc_vector2d(600, 300));
+    //huntermonster_new(player, gfc_vector2d(750, 200));
+    //spittermonster_new(player, gfc_vector2d(800, 150));
+    witchmonster_new(player, gfc_vector2d(500, 250));
     /*main game loop*/
     while(!done)
     {
-        SDL_PumpEvents();   // update SDL's internal event structures
+        SDL_PumpEvents();
         keys = SDL_GetKeyboardState(NULL); // get the keyboard state for this frame
         /*update things here*/
         SDL_GetMouseState(&mx,&my);
-        mf+=0.1;
-        if (mf >= 16.0)mf = 0;
+        if (spawnCooldown > 0)
+        {
+            spawnCooldown--;
+        }
+        if (spawnCooldown == 0)
+        {
+            GFC_Vector2D spawnPos;
+
+            /* spawn slightly to the right of the player */
+            spawnPos = gfc_vector2d(player->position.x + spawnOffset, player->position.y);
+
+            if (keys[SDL_SCANCODE_1])
+            {
+                monster_new(player, spawnPos);
+                slog("Spawned regular zombie");
+                spawnCooldown = 12;
+            }
+            else if (keys[SDL_SCANCODE_2])
+            {
+                tankmonster_new(player, spawnPos);
+                slog("Spawned tank zombie");
+                spawnCooldown = 12;
+            }
+            else if (keys[SDL_SCANCODE_3])
+            {
+                huntermonster_new(player, spawnPos);
+                slog("Spawned hunter zombie");
+                spawnCooldown = 12;
+            }
+            else if (keys[SDL_SCANCODE_4])
+            {
+                spittermonster_new(player, spawnPos);
+                slog("Spawned spitter zombie");
+                spawnCooldown = 12;
+            }
+            else if (keys[SDL_SCANCODE_5])
+            {
+                witchmonster_new(player, spawnPos);
+                slog("Spawned witch zombie");
+                spawnCooldown = 12;
+            }
+        }
+        entity_system_think();
+        entity_system_update();
         
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame
             //backgrounds drawn first
-            gf2d_sprite_draw_image(sprite,gfc_vector2d(0,0));
-            
+            world_draw(world);
+
+            entity_system_draw();
+
+            {
+                PlayerWeaponType currentWeapon;
+                Sprite* currentWeaponSprite = NULL;
+
+                GFC_Vector2D uiPos = { 80.0f, 60.0f };
+
+                GFC_Vector2D uiCenter = { 300.0f, 300.0f };
+
+                GFC_Vector2D uiScale = { 0.22f, 0.22f };
+
+                float uiRotation = 180.0f;
+
+                currentWeapon = player_get_weapon(player);
+
+                if (currentWeapon == PLAYER_WEAPON_ASSAULT_RIFLE)
+                {
+                    currentWeaponSprite = uiAssaultRifle;
+                }
+                else if (currentWeapon == PLAYER_WEAPON_SHOTGUN)
+                {
+                    currentWeaponSprite = uiShotgun;
+                }
+                else if (currentWeapon == PLAYER_WEAPON_PISTOL)
+                {
+                    currentWeaponSprite = uiPistol;
+                }
+                else if (currentWeapon == PLAYER_WEAPON_DEAGLE)
+                {
+                    currentWeaponSprite = uiDeagle;
+                }
+                else if (currentWeapon == PLAYER_WEAPON_SMG)
+                {
+                    currentWeaponSprite = uiSmg;
+                }
+
+                if (currentWeaponSprite)
+                {
+                    gf2d_sprite_draw(
+                        currentWeaponSprite,
+                        uiPos,
+                        NULL,
+                        &uiCenter,
+                        &uiRotation,
+                        &uiScale,
+                        NULL,
+                        0
+                    );
+                }
+            }
+
+            {
+                int health = player_get_health(player);
+                int maxHealth = player_get_max_health(player);
+
+                float healthPercent = (float)health / (float)maxHealth;
+
+                GFC_Vector2D barPos = { 40.0f, 560.0f };
+
+                float barWidth = 200.0f;
+                float barHeight = 20.0f;
+
+                /* border */
+                gf2d_draw_rect(
+                    gfc_rect(barPos.x - 2, barPos.y - 2, barWidth + 4, barHeight + 4),
+                    gfc_color(0, 0, 0, 255)
+                );
+
+                /* background (red, filled) */
+                gf2d_draw_rect_filled(
+                    gfc_rect(barPos.x, barPos.y, barWidth, barHeight),
+                    gfc_color(100, 0, 0, 255)
+                );
+
+                /* foreground (green, filled) */
+                gf2d_draw_rect_filled(
+                    gfc_rect(barPos.x, barPos.y, barWidth * healthPercent, barHeight),
+                    gfc_color(0, 200, 0, 255)
+                );
+            }
+
             //UI elements last
             gf2d_sprite_draw(
                 mouse,
-                gfc_vector2d(mx,my),
+                gfc_vector2d(mx, my),
+                NULL,
+                &mouseCenter,
                 NULL,
                 NULL,
                 NULL,
-                NULL,
-                &mouseGFC_Color,
-                (int)mf);
+                0);
 
         gf2d_graphics_next_frame();// render current draw frame and skip to the next frame
         
         if (keys[SDL_SCANCODE_ESCAPE])done = 1; // exit condition
         //slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
+    entity_free(player);
+    world_free(world);
     slog("---==== END ====---");
     return 0;
 }

@@ -1,0 +1,536 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\carde\\git\\gameframework2d\\win\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\game.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\barrel.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\projectile.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\barrel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\witchmonster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\spittermonster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\witchmonster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\huntermonster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\spittermonster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\spitprojectile.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\spitprojectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\tankmonster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\huntermonster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\tankmonster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\monster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\player.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\world.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\smg_pickup.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\shotgun_pickup.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\pistol_pickup.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\assaultrifle_pickup.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\deagle_pickup.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\entity.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\smg_pickup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\shotgun_pickup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\projectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\pistol_pickup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\deagle_pickup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14E68D0B-9B33-47A0-A0A4-93C872D236F1}|win.vcxproj|C:\\Users\\carde\\git\\gameframework2d\\src\\assaultrifle_pickup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 231,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "barrel.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\barrel.c",
+              "RelativeDocumentMoniker": "..\\src\\barrel.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\barrel.c",
+              "RelativeToolTip": "..\\src\\barrel.c",
+              "ViewState": "AgIAAJcAAAAAAAAAAAArwLMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T10:05:26.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "barrel.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\barrel.h",
+              "RelativeDocumentMoniker": "..\\src\\barrel.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\barrel.h",
+              "RelativeToolTip": "..\\src\\barrel.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T10:04:52.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "projectile.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\projectile.c",
+              "RelativeDocumentMoniker": "..\\src\\projectile.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\projectile.c",
+              "RelativeToolTip": "..\\src\\projectile.c",
+              "ViewState": "AgIAACkAAAAAAAAAAAAkwIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-20T00:02:03.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "game.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\game.c",
+              "RelativeDocumentMoniker": "..\\src\\game.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\game.c",
+              "RelativeToolTip": "..\\src\\game.c",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAFoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-31T02:23:27.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "spittermonster.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\spittermonster.c",
+              "RelativeDocumentMoniker": "..\\src\\spittermonster.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\spittermonster.c",
+              "RelativeToolTip": "..\\src\\spittermonster.c",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T09:03:22.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "witchmonster.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\witchmonster.c",
+              "RelativeDocumentMoniker": "..\\src\\witchmonster.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\witchmonster.c",
+              "RelativeToolTip": "..\\src\\witchmonster.c",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAhwJoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-22T17:36:33.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "monster.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\monster.h",
+              "RelativeDocumentMoniker": "..\\src\\monster.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\monster.h",
+              "RelativeToolTip": "..\\src\\monster.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-20T00:06:28.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "witchmonster.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\witchmonster.h",
+              "RelativeDocumentMoniker": "..\\src\\witchmonster.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\witchmonster.h",
+              "RelativeToolTip": "..\\src\\witchmonster.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-22T17:36:37.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "spittermonster.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\spittermonster.h",
+              "RelativeDocumentMoniker": "..\\src\\spittermonster.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\spittermonster.h",
+              "RelativeToolTip": "..\\src\\spittermonster.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T08:47:10.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "huntermonster.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\huntermonster.c",
+              "RelativeDocumentMoniker": "..\\src\\huntermonster.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\huntermonster.c",
+              "RelativeToolTip": "..\\src\\huntermonster.c",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T07:59:29.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "spitprojectile.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\spitprojectile.c",
+              "RelativeDocumentMoniker": "..\\src\\spitprojectile.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\spitprojectile.c",
+              "RelativeToolTip": "..\\src\\spitprojectile.c",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAACkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T08:58:18.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "spitprojectile.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\spitprojectile.h",
+              "RelativeDocumentMoniker": "..\\src\\spitprojectile.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\spitprojectile.h",
+              "RelativeToolTip": "..\\src\\spitprojectile.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T08:56:54.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "tankmonster.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\tankmonster.c",
+              "RelativeDocumentMoniker": "..\\src\\tankmonster.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\tankmonster.c",
+              "RelativeToolTip": "..\\src\\tankmonster.c",
+              "ViewState": "AgIAADkAAAAAAAAAAAAhwEcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T06:27:06.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "huntermonster.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\huntermonster.h",
+              "RelativeDocumentMoniker": "..\\src\\huntermonster.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\huntermonster.h",
+              "RelativeToolTip": "..\\src\\huntermonster.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T07:56:12.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "tankmonster.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\tankmonster.h",
+              "RelativeDocumentMoniker": "..\\src\\tankmonster.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\tankmonster.h",
+              "RelativeToolTip": "..\\src\\tankmonster.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T08:30:16.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "monster.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\monster.c",
+              "RelativeDocumentMoniker": "..\\src\\monster.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\monster.c",
+              "RelativeToolTip": "..\\src\\monster.c",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAhwHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-22T03:21:33.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "player.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\player.c",
+              "RelativeDocumentMoniker": "..\\src\\player.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\player.c",
+              "RelativeToolTip": "..\\src\\player.c",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAAAFoBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-17T03:25:42.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "world.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\world.c",
+              "RelativeDocumentMoniker": "..\\src\\world.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\world.c",
+              "RelativeToolTip": "..\\src\\world.c",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-23T17:26:24.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "player.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\player.h",
+              "RelativeDocumentMoniker": "..\\src\\player.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\player.h",
+              "RelativeToolTip": "..\\src\\player.h",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-22T22:50:40.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "smg_pickup.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\smg_pickup.c",
+              "RelativeDocumentMoniker": "..\\src\\smg_pickup.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\smg_pickup.c",
+              "RelativeToolTip": "..\\src\\smg_pickup.c",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T05:15:40.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "shotgun_pickup.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\shotgun_pickup.c",
+              "RelativeDocumentMoniker": "..\\src\\shotgun_pickup.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\shotgun_pickup.c",
+              "RelativeToolTip": "..\\src\\shotgun_pickup.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-23T22:09:17.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "pistol_pickup.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\pistol_pickup.c",
+              "RelativeDocumentMoniker": "..\\src\\pistol_pickup.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\pistol_pickup.c",
+              "RelativeToolTip": "..\\src\\pistol_pickup.c",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-23T23:39:13.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "assaultrifle_pickup.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\assaultrifle_pickup.c",
+              "RelativeDocumentMoniker": "..\\src\\assaultrifle_pickup.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\assaultrifle_pickup.c",
+              "RelativeToolTip": "..\\src\\assaultrifle_pickup.c",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-23T17:07:03.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "deagle_pickup.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\deagle_pickup.c",
+              "RelativeDocumentMoniker": "..\\src\\deagle_pickup.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\deagle_pickup.c",
+              "RelativeToolTip": "..\\src\\deagle_pickup.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-24T01:29:47.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "entity.c",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\entity.c",
+              "RelativeDocumentMoniker": "..\\src\\entity.c",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\entity.c",
+              "RelativeToolTip": "..\\src\\entity.c",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAhwG0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-23T21:15:14.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "smg_pickup.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\smg_pickup.h",
+              "RelativeDocumentMoniker": "..\\src\\smg_pickup.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\smg_pickup.h",
+              "RelativeToolTip": "..\\src\\smg_pickup.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T05:15:02.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "shotgun_pickup.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\shotgun_pickup.h",
+              "RelativeDocumentMoniker": "..\\src\\shotgun_pickup.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\shotgun_pickup.h",
+              "RelativeToolTip": "..\\src\\shotgun_pickup.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-23T22:09:31.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "projectile.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\projectile.h",
+              "RelativeDocumentMoniker": "..\\src\\projectile.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\projectile.h",
+              "RelativeToolTip": "..\\src\\projectile.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-19T23:56:08.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "pistol_pickup.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\pistol_pickup.h",
+              "RelativeDocumentMoniker": "..\\src\\pistol_pickup.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\pistol_pickup.h",
+              "RelativeToolTip": "..\\src\\pistol_pickup.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-23T23:38:54.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "entity.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\entity.h",
+              "RelativeDocumentMoniker": "..\\src\\entity.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\entity.h",
+              "RelativeToolTip": "..\\src\\entity.h",
+              "ViewState": "AgIAADQAAAAAAAAAAAAwwCkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-22T22:51:20.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "deagle_pickup.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\deagle_pickup.h",
+              "RelativeDocumentMoniker": "..\\src\\deagle_pickup.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\deagle_pickup.h",
+              "RelativeToolTip": "..\\src\\deagle_pickup.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-24T01:29:03.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "assaultrifle_pickup.h",
+              "DocumentMoniker": "C:\\Users\\carde\\git\\gameframework2d\\src\\assaultrifle_pickup.h",
+              "RelativeDocumentMoniker": "..\\src\\assaultrifle_pickup.h",
+              "ToolTip": "C:\\Users\\carde\\git\\gameframework2d\\src\\assaultrifle_pickup.h",
+              "RelativeToolTip": "..\\src\\assaultrifle_pickup.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-23T17:06:33.102Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
