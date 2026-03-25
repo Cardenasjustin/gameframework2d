@@ -36,6 +36,8 @@ C:\Users\carde\git\gameframework2d\src\gf2d_draw.c;C:\Users\carde\git\gameframew
 C:\Users\carde\git\gameframework2d\src\gf2d_graphics.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\gf2d_graphics.obj
 C:\Users\carde\git\gameframework2d\src\gf2d_sprite.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\gf2d_sprite.obj
 C:\Users\carde\git\gameframework2d\src\huntermonster.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\huntermonster.obj
+C:\Users\carde\git\gameframework2d\src\medkit.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\medkit.obj
+C:\Users\carde\git\gameframework2d\src\money.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\money.obj
 C:\Users\carde\git\gameframework2d\src\monster.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\monster.obj
 C:\Users\carde\git\gameframework2d\src\pistol_pickup.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\pistol_pickup.obj
 C:\Users\carde\git\gameframework2d\src\player.c;C:\Users\carde\git\gameframework2d\win\win\x64\Debug\player.obj

@@ -14,7 +14,6 @@ typedef struct
     float explosionRadius;
 }BarrelData;
 
-/* ADDED: barrel list so projectiles can find barrels */
 #define MAX_BARRELS 256
 static Entity* _barrel_list[MAX_BARRELS];
 static Uint32 _barrel_count = 0;
@@ -54,6 +53,28 @@ Entity** barrel_get_all(Uint32* outCount)
 {
     if (outCount) *outCount = _barrel_count;
     return _barrel_list;
+}
+
+int barrel_collides_with_position(GFC_Vector2D position, float radius)
+{
+    Uint32 i;
+    float r;
+
+    for (i = 0; i < _barrel_count; i++)
+    {
+        Entity* b = _barrel_list[i];
+
+        if (!b) continue;
+
+        r = radius + 22.0f;
+
+        if (dist2(position, b->position) <= r * r)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
 }
 
 static void barrel_explode(Entity* self)
@@ -177,7 +198,7 @@ Entity* barrel_new(GFC_Vector2D position)
     }
 
     data->health = 1;
-    data->explosionRadius = 500.0f;
+    data->explosionRadius = 1000.0f;
 
     self->data = data;
     self->update = barrel_update;

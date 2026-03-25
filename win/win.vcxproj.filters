@@ -162,6 +162,12 @@
     <ClCompile Include="..\src\barrel.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\medkit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\money.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\gf2d_draw.h">
@@ -312,6 +318,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\barrel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\medkit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\money.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -10,6 +10,7 @@
 #include "camera.h"
 #include "player.h"
 #include "projectile.h"
+#include "barrel.h"
 
 typedef struct
 {
@@ -29,6 +30,8 @@ typedef struct
 
     int isFrozen;
 
+    int money;
+
     Sprite* assaultRifleSprite;
 }PlayerData;
 
@@ -36,7 +39,6 @@ void player_think(Entity* self);
 void player_update(Entity* self);
 void player_free(Entity* self);
 
-/* helper to rotate a direction vector by degrees */
 static GFC_Vector2D rotate_vector_degrees(GFC_Vector2D v, float degrees)
 {
     float radians;
@@ -54,7 +56,6 @@ static GFC_Vector2D rotate_vector_degrees(GFC_Vector2D v, float degrees)
     return out;
 }
 
-// give the player the assault rifle and equip it
 void player_give_assault_rifle(Entity* self)
 {
     PlayerData* pd;
@@ -68,7 +69,6 @@ void player_give_assault_rifle(Entity* self)
     pd->currentWeapon = PLAYER_WEAPON_ASSAULT_RIFLE;
 }
 
-// check if player has the assault rifle
 int player_has_assault_rifle(Entity* self)
 {
     PlayerData* pd;
@@ -80,7 +80,6 @@ int player_has_assault_rifle(Entity* self)
     return pd->hasAssaultRifle;
 }
 
-/*  give the player the shotgun and equip it */
 void player_give_shotgun(Entity* self)
 {
     PlayerData* pd;
@@ -93,7 +92,6 @@ void player_give_shotgun(Entity* self)
     pd->currentWeapon = PLAYER_WEAPON_SHOTGUN;
 }
 
-/* check if player has shotgun */
 int player_has_shotgun(Entity* self)
 {
     PlayerData* pd;
@@ -174,7 +172,6 @@ int player_has_smg(Entity* self)
     return pd->hasSmg;
 }
 
-// get current weapon
 PlayerWeaponType player_get_weapon(Entity* self)
 {
     PlayerData* pd;
@@ -194,7 +191,6 @@ void player_take_damage(Entity* self, int amount)
     pd = (PlayerData*)self->data;
     if (!pd) return;
 
-    /* prevent taking damage every single frame */
     if (pd->damageCooldown > 0) return;
 
     pd->health -= amount;
@@ -203,10 +199,9 @@ void player_take_damage(Entity* self, int amount)
         pd->health = 0;
     }
 
-    pd->damageCooldown = 20; /* short invulnerability window */
+    pd->damageCooldown = 20;
 }
 
-/* get current health */
 int player_get_health(Entity* self)
 {
     PlayerData* pd;
@@ -218,7 +213,6 @@ int player_get_health(Entity* self)
     return pd->health;
 }
 
-/* get max health */
 int player_get_max_health(Entity* self)
 {
     PlayerData* pd;
@@ -228,6 +222,44 @@ int player_get_max_health(Entity* self)
     if (!pd) return 0;
 
     return pd->maxHealth;
+}
+
+void player_heal(Entity* self, int amount)
+{
+    PlayerData* pd;
+
+    if (!self) return;
+    pd = (PlayerData*)self->data;
+    if (!pd) return;
+
+    pd->health += amount;
+
+    if (pd->health > pd->maxHealth)
+    {
+        pd->health = pd->maxHealth;
+    }
+}
+
+void player_add_money(Entity* self, int amount)
+{
+    PlayerData* pd;
+
+    if (!self) return;
+    pd = (PlayerData*)self->data;
+    if (!pd) return;
+
+    pd->money += amount;
+}
+
+int player_get_money(Entity* self)
+{
+    PlayerData* pd;
+
+    if (!self) return 0;
+    pd = (PlayerData*)self->data;
+    if (!pd) return 0;
+
+    return pd->money;
 }
 
 void player_set_frozen(Entity* self, int frozen)
@@ -286,7 +318,7 @@ Entity* player_new()
     }
 
     pd->shootCooldown = 0;
-    pd->hasAssaultRifle = 0;   // player starts with no gun
+    pd->hasAssaultRifle = 0;
     pd->hasShotgun = 0;
     pd->hasPistol = 0;
     pd->hasDeagle = 0;
@@ -299,6 +331,8 @@ Entity* player_new()
     pd->damageCooldown = 0;
 
     pd->isFrozen = 0;
+
+    pd->money = 0;
 
     self->data = pd;
     self->think = player_think;
@@ -346,7 +380,6 @@ void player_think(Entity* self)
         self->velocity.y = 0;
     }
 
-    // use player position directly
     aimOrigin = self->position;
     aimOrigin.x += 8.0f;
     aimOrigin.y += 6.0f;
@@ -359,14 +392,13 @@ void player_think(Entity* self)
     if (pd->shootCooldown > 0)
         pd->shootCooldown--;
 
-    // no shooting at all unless a gun has been picked up
     if ((mouseButtons & SDL_BUTTON(SDL_BUTTON_LEFT)) &&
         pd->shootCooldown == 0 &&
         pd->currentWeapon != PLAYER_WEAPON_NONE)
     {
         GFC_Vector2D spawn;
-        float muzzleForward = 0.0f;     // how far in front of player center
-        float muzzleSide = -12.0f;      // side offset, adjust if needed
+        float muzzleForward = 0.0f;    
+        float muzzleSide = -12.0f;     
 
         shootDir.x = (float)mx - aimOrigin.x;
         shootDir.y = (float)my - aimOrigin.y;
@@ -376,20 +408,17 @@ void player_think(Entity* self)
         spawn.x += shootDir.x * muzzleForward + (-shootDir.y * muzzleSide);
         spawn.y += shootDir.y * muzzleForward + (shootDir.x * muzzleSide);
 
-        /* fire based on equipped weapon */
         if (pd->currentWeapon == PLAYER_WEAPON_ASSAULT_RIFLE)
         {
-            /* assault rifle fires one straight bullet */
             projectile_new(self, spawn, shootDir, PROJECTILE_TYPE_RIFLE);
             pd->shootCooldown = 12;
         }
         else if (pd->currentWeapon == PLAYER_WEAPON_SHOTGUN)
         {
-            /* shotgun pellet spread */
             int i;
-            const int pelletCount = 5;     // number of pellets
-            const float spreadStep = 6.0f; // angle between pellets
-            float startAngle = -12.0f;     // total spread from left side
+            const int pelletCount = 5;     
+            const float spreadStep = 6.0f; 
+            float startAngle = -12.0f;     
 
             for (i = 0; i < pelletCount; i++)
             {
@@ -399,23 +428,20 @@ void player_think(Entity* self)
                 projectile_new(self, spawn, pelletDir, PROJECTILE_TYPE_SHOTGUN);
             }
 
-            pd->shootCooldown = 30; /* shotgun shoots slower */
+            pd->shootCooldown = 30;
         }
         else if (pd->currentWeapon == PLAYER_WEAPON_PISTOL)
         {
-            /* pistol fires one bullet slower than assault rifle */
             projectile_new(self, spawn, shootDir, PROJECTILE_TYPE_PISTOL);
             pd->shootCooldown = 15;
         }
         else if (pd->currentWeapon == PLAYER_WEAPON_DEAGLE)
         {
-            /* deagle fires one stronger-feeling shot using pistol bullet sprite */
             projectile_new(self, spawn, shootDir, PROJECTILE_TYPE_DEAGLE);
             pd->shootCooldown = 24;
         }
         else if (pd->currentWeapon == PLAYER_WEAPON_SMG)
         {
-            /* smg fires one bullet very quickly */
             projectile_new(self, spawn, shootDir, PROJECTILE_TYPE_SMG);
             pd->shootCooldown = 5;
         }
@@ -425,8 +451,15 @@ void player_think(Entity* self)
 void player_update(Entity* self)
 {
     PlayerData* pd;
+    GFC_Vector2D camPos;
 
-    if (!self)return;
+    const float screenW = 800.0f;
+    const float screenH = 608.0f;
+
+    const float marginX = 20.0f;
+    const float marginY = 20.0f;
+
+    if (!self) return;
     pd = (PlayerData*)self->data;
     if (!pd) return;
 
@@ -434,6 +467,7 @@ void player_update(Entity* self)
     {
         pd->damageCooldown--;
     }
+
     if (fabs(self->velocity.x) > 0.01f || fabsf(self->velocity.y) > 0.01f)
     {
         self->frame += 0.2f;
@@ -444,7 +478,44 @@ void player_update(Entity* self)
         self->frame = 0;
     }
 
-    gfc_vector2d_add(self->position, self->position, self->velocity);
+    {
+        GFC_Vector2D nextPos;
+
+        gfc_vector2d_add(nextPos, self->position, self->velocity);
+
+        if (!barrel_collides_with_position(nextPos, 18.0f))
+        {
+            self->position = nextPos;
+        }
+        else
+        {
+            self->velocity.x = 0;
+            self->velocity.y = 0;
+        }
+    }
+
+    camera_center_on(self->position);
+
+    camPos = camera_get_position();
+
+    if (self->position.x < camPos.x + marginX)
+    {
+        self->position.x = camPos.x + marginX;
+    }
+    if (self->position.x > camPos.x + screenW - marginX)
+    {
+        self->position.x = camPos.x + screenW - marginX;
+    }
+
+    if (self->position.y < camPos.y + marginY)
+    {
+        self->position.y = camPos.y + marginY;
+    }
+    if (self->position.y > camPos.y + screenH - marginY)
+    {
+        self->position.y = camPos.y + screenH - marginY;
+    }
+
     camera_center_on(self->position);
 }
 

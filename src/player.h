@@ -100,4 +100,9 @@ void player_set_frozen(Entity* self, int frozen);
  */
 int player_is_frozen(Entity* self);
 
+void player_heal(Entity* self, int amount);
+
+void player_add_money(Entity* self, int amount);
+int player_get_money(Entity* self);
+
 #endif // !__PLAYER_H__

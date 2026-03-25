@@ -13,8 +13,8 @@
 typedef struct
 {
 	Entity* owner;
-	int life;			// frames until despawn
-	float radius;		// collision radius
+	int life;			
+	float radius;
 	//float knockback;	// how hard to push monster
 
 	ProjectileType type;
@@ -49,7 +49,6 @@ static void projectile_update(Entity* self)
 	pd = (ProjectileData*)self->data;
 	if (!pd) return;
 
-	// lifetime
 	pd->life--;
 	if (pd->life <= 0)
 	{
@@ -57,12 +56,9 @@ static void projectile_update(Entity* self)
 		return;
 	}
 
-	// move
 	gfc_vector2d_add(self->position, self->position, self->velocity);
 
-	// get monster list
 	monsters = monster_get_all(&count);
-	if (!monsters || count == 0) return;
 
 	for (i = 0; i < count; i++)
 	{
@@ -71,8 +67,7 @@ static void projectile_update(Entity* self)
 
 		if (!m) continue;
 
-		// basic circle hit test
-		r = pd->radius + 1.0f; // monster radius
+		r = pd->radius + 1.0f;
 		if (dist2(self->position, m->position) <= r * r)
 		{
 			int damage = 0;
@@ -126,7 +121,6 @@ static void projectile_update(Entity* self)
 				}
 			}
 
-			// destroy projectile on impact
 			entity_free(self);
 			return;
 		}
@@ -143,14 +137,11 @@ static void projectile_update(Entity* self)
 
 			if (!b) continue;
 
-			/* basic barrel hit radius */
 			r = pd->radius + 20.0f;
 
 			if (dist2(self->position, b->position) <= r * r)
 			{
 				barrel_take_damage(b, 1);
-
-				/* destroy projectile on barrel impact */
 				entity_free(self);
 				return;
 			}
@@ -173,7 +164,6 @@ Entity* projectile_new(Entity* owner, GFC_Vector2D position, GFC_Vector2D direct
 	self = entity_new();
 	if (!self) return NULL;
 
-	/* different sprite depending on projectile type */
 	if (type == PROJECTILE_TYPE_SHOTGUN)
 	{
 		self->sprite = gf2d_sprite_load_all(
@@ -210,7 +200,6 @@ Entity* projectile_new(Entity* owner, GFC_Vector2D position, GFC_Vector2D direct
 
 	self->position = position;
 
-	/* move it a little right */
 	if (type == PROJECTILE_TYPE_PISTOL)
 	{
 		GFC_Vector2D rightOffset;
@@ -241,7 +230,6 @@ Entity* projectile_new(Entity* owner, GFC_Vector2D position, GFC_Vector2D direct
 		self->position.x += rightOffset.x;
 		self->position.y += rightOffset.y;
 	}
-	/* different projectile speeds */
 	if (type == PROJECTILE_TYPE_SHOTGUN)
 	{
 		self->velocity = gfc_vector2d(direction.x * 10.0f, direction.y * 10.0f);
@@ -263,13 +251,11 @@ Entity* projectile_new(Entity* owner, GFC_Vector2D position, GFC_Vector2D direct
 		self->velocity = gfc_vector2d(direction.x * 12.0f, direction.y * 12.0f);
 	}
 
-	/* rotate projectile to match firing direction */
 	self->rotation = atan2f(direction.y, direction.x) * (180.0f / (float)M_PI);
 
 	pd->owner = owner;
 	pd->type = type;
 
-	/* different projectile stats */
 	if (type == PROJECTILE_TYPE_SHOTGUN)
 	{
 		pd->life = 40;

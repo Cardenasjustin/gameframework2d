@@ -24,4 +24,6 @@ void barrel_take_damage(Entity* barrel, int amount);
  */
 Entity** barrel_get_all(Uint32* outCount);
 
+int barrel_collides_with_position(GFC_Vector2D position, float radius);
+
 #endif
